@@ -6,26 +6,37 @@ import countriesJson from "./countries.json"; // Selector.jsから移動
 import TopPage from "./pages/TopPage";
 import WorldPage from "./pages/WorldPage";
 import "./App.css";
+// 型定義をimportする
+import { CountryDataType, AllCountriesDataType } from "./types";
 
 function App() {
   // - 国個別
   // /////////////// Selector.js から移動 ///////////////
-  const [country, setCountry] = useState("japan");
+  const [country, setCountry] = useState<string>("japan");
   // apiから受け取ったデータからページ上に表示したい内容に整形する
-  const [countryData, setCountryData] = useState({
-    date: '',
-    newConfirmed: '',
-    totalConfirmed: '',
-    newRecovered: '',
-    totalRecovered: '',
+  // tsxに変換
+  const [countryData, setCountryData] = useState<CountryDataType>({
+    date: '',           // tsx型 string
+    newConfirmed: 0,    // tsx型 number
+    totalConfirmed: 0,  // tsx型 number
+    newRecovered: 0,    // tsx型 number
+    totalRecovered: 0,  // tsx型 number
   });
 
   // /////////////// Card.js から移動 ///////////////
-  const [allCountriesData, setAllCountriesData] = useState([]);
+  // tsxに変換
+  // const [allCountriesData, setAllCountriesData] = useState([]);
+  // tsxに合わせて型にあった初期値を設定
+  const [allCountriesData, setAllCountriesData] = useState<AllCountriesDataType>([{
+    Country: '',
+    NewConfirmed: 0,
+    TotalConfirmed: 0,
+  }]);
   /////////////////////////////////////////////////
 
   // ////////// Results.js に ローディングを表示させる華道家の判定に使用 //////////
-  const [loading, setLoading] = useState(false);
+  // tesxに変換
+  const [loading, setLoading] = useState<boolean>(false);
   /////////////////////////////////////////////////
 
   // console.log("countriesJson :>> ", countriesJson);

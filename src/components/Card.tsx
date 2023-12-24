@@ -1,6 +1,9 @@
 // import { useState } from "react";
+// 型定義をimportする
+import { CardType } from "../types";
 
-const Card = (props) => {
+// props
+const Card = ({allCountriesData}:CardType) => {
   // const [allCountriesData, setAllCountriesData] = useState([]);
 
   // const getAllCountriesData = () => {
@@ -16,7 +19,7 @@ const Card = (props) => {
   return (
     <div className="card-container">
       {/* {} ではなく、 そのままhtmlを書くか、 () で囲む必要がある! 要素を返すため */}
-      {props.allCountriesData.map((singleData, index) => (
+      {allCountriesData.map((singleData, index) => (
         <div key={index} className="card">
           <div>
             <h2>{singleData.Country}</h2>

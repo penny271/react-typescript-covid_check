@@ -1,8 +1,10 @@
-import Loading from "../components/Loading"
+import Loading from "./Loading"
+import { ResultsType } from "../types";
 
 // const Results = (props) => {
 // 分割代入
-const Results = ({countryData, loading}) => {
+// tsxに変換
+const Results = ({countryData, loading}:ResultsType) => {
   // console.log('Resultsのprops :>> ', props);
   // 分割代入
   const { date, newConfirmed, totalConfirmed, newRecovered, totalRecovered } = countryData;

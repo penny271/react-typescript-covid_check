@@ -1,9 +1,10 @@
-
-{/*  Top.js => TopPage.js から props を受け取る */}
+// 型定義をimportする
+import { SelectorType } from "../types";
+{/*  Top.js => TopPage.js から props を受け取る */ }
 
 // const Selector = (props) => {
 // 分割代入
-const Selector = ({setCountry, countriesJson, getCountryData}) => {
+const Selector = ({setCountry, countriesJson}: SelectorType) => {
 
   return (
     <div className="selector-container">
