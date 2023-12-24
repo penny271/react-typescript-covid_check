@@ -1,8 +1,21 @@
-import Loading from "../components/Loading"
+import Loading from "./Loading"
+
+// tsxに変換
+type ResultsType = {
+  countryData: {
+    date: string,
+    newConfirmed: number,
+    totalConfirmed: number,
+    newRecovered: number,
+    totalRecovered: number,
+  },
+  loading: boolean,
+}
 
 // const Results = (props) => {
 // 分割代入
-const Results = ({countryData, loading}) => {
+// tsxに変換
+const Results = ({countryData, loading}:ResultsType) => {
   // console.log('Resultsのprops :>> ', props);
   // 分割代入
   const { date, newConfirmed, totalConfirmed, newRecovered, totalRecovered } = countryData;

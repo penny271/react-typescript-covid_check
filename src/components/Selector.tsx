@@ -1,9 +1,18 @@
+// tsxに変換
+type SelectorType = {
+  setCountry: React.Dispatch<React.SetStateAction<string>>,
+  countriesJson: {
+    // jsonファイルの中身も個別に型を記述する
+    Country: string,
+    Slug: string,
+  }[], // ! 配列構造であることを明示する
+}
 
-{/*  Top.js => TopPage.js から props を受け取る */}
+{/*  Top.js => TopPage.js から props を受け取る */ }
 
 // const Selector = (props) => {
 // 分割代入
-const Selector = ({setCountry, countriesJson, getCountryData}) => {
+const Selector = ({setCountry, countriesJson}: SelectorType) => {
 
   return (
     <div className="selector-container">

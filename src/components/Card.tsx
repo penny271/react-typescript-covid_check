@@ -1,6 +1,20 @@
 // import { useState } from "react";
 
-const Card = (props) => {
+// tsxに変換
+interface SingleCountriesDataType {
+  Country: string,
+  NewConfirmed: number,
+  TotalConfirmed: number,
+}
+
+// tsxに変換 上のデータが配列で有ることを明示する
+// extendsを使わない書き方
+interface CardType {
+  allCountriesData: Array<SingleCountriesDataType>
+}
+
+// props
+const Card = ({allCountriesData}:CardType) => {
   // const [allCountriesData, setAllCountriesData] = useState([]);
 
   // const getAllCountriesData = () => {
@@ -16,7 +30,7 @@ const Card = (props) => {
   return (
     <div className="card-container">
       {/* {} ではなく、 そのままhtmlを書くか、 () で囲む必要がある! 要素を返すため */}
-      {props.allCountriesData.map((singleData, index) => (
+      {allCountriesData.map((singleData, index) => (
         <div key={index} className="card">
           <div>
             <h2>{singleData.Country}</h2>
