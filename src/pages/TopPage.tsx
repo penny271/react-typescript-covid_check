@@ -2,26 +2,8 @@ import Title from "../components/Title";
 import Selector from "../components/Selector";
 import Results from "../components/Results";
 import Header from "../components/Header";
-
-// - 各コンポーネントに入ってくるデータには、それぞれ個別の型定義が必要。これによって、もしそこで何らかの齟齬があるとエラーが表示され、潜在的なバグや不具合を早い段階で発見できるようになる。
-// tsxに変換
-type TopPageType = {
-  countriesJson: {
-    // jsonファイルの中身も個別に型を記述する
-    Country: string,
-    Slug: string,
-  }[], // ! 配列構造であることを明示する
-  setCountry: React.Dispatch<React.SetStateAction<string>>,
-  countryData: {
-    date: string,
-    newConfirmed: number,
-    totalConfirmed: number,
-    newRecovered: number,
-    totalRecovered: number,
-  },
-  loading: boolean,
-}
-
+// 型定義をimportする
+import { TopPageType } from "../types";
 
 {/*  App.js から props を受け取り Selector.js にわたす */ }
 // 分割代入

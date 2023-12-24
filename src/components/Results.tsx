@@ -1,16 +1,5 @@
 import Loading from "./Loading"
-
-// tsxに変換
-type ResultsType = {
-  countryData: {
-    date: string,
-    newConfirmed: number,
-    totalConfirmed: number,
-    newRecovered: number,
-    totalRecovered: number,
-  },
-  loading: boolean,
-}
+import { ResultsType } from "../types";
 
 // const Results = (props) => {
 // 分割代入

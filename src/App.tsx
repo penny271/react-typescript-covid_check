@@ -6,25 +6,8 @@ import countriesJson from "./countries.json"; // Selector.jsから移動
 import TopPage from "./pages/TopPage";
 import WorldPage from "./pages/WorldPage";
 import "./App.css";
-
-// tsxに変換
-type CountryDataType = {
-  date: string,
-  newConfirmed: number,
-  totalConfirmed: number,
-  newRecovered:  number,
-  totalRecovered: number,
-}
-
-// tsxに変換
-interface SingleCountriesDataType {
-  Country: string,
-  NewConfirmed: number,
-  TotalConfirmed: number,
-}
-
-// tsxに変換 上のデータが配列で有ることを明示する
-interface AllCountriesDataTypeArray extends Array<SingleCountriesDataType> {}
+// 型定義をimportする
+import { CountryDataType, AllCountriesDataType } from "./types";
 
 function App() {
   // - 国個別
@@ -44,7 +27,7 @@ function App() {
   // tsxに変換
   // const [allCountriesData, setAllCountriesData] = useState([]);
   // tsxに合わせて型にあった初期値を設定
-  const [allCountriesData, setAllCountriesData] = useState<AllCountriesDataTypeArray>([{
+  const [allCountriesData, setAllCountriesData] = useState<AllCountriesDataType>([{
     Country: '',
     NewConfirmed: 0,
     TotalConfirmed: 0,

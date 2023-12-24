@@ -1,17 +1,6 @@
 // import { useState } from "react";
-
-// tsxに変換
-interface SingleCountriesDataType {
-  Country: string,
-  NewConfirmed: number,
-  TotalConfirmed: number,
-}
-
-// tsxに変換 上のデータが配列で有ることを明示する
-// extendsを使わない書き方
-interface CardType {
-  allCountriesData: Array<SingleCountriesDataType>
-}
+// 型定義をimportする
+import { CardType } from "../types";
 
 // props
 const Card = ({allCountriesData}:CardType) => {
